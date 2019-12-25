@@ -6,37 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <title>Drink Water</title>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <style>
-        html, body {
+        html,
+        body {
             font-family: 'Open Sans', sans-serif;
             font-size: 14px;
             margin: 0;
-            min-height: 300px;
+            min-height: 150px;
             padding: 0;
-            width: 150px;
+            width: 200px;
+            border: 1px solid Black;
         }
+
         h1 {
             font-family: 'Menlo', monospace;
             font-size: 18px;
             font-weight: 400;
             margin: 0;
-            color: blue;
+            color: #60C3E8;
+            margin-left: 40px;
         }
 
         .timer-header {
             align-items: center;
             border-bottom: 0.55px solid #dadada;
+
         }
 
         .timer-label {
-            padding: 10px 22px;
             align-items: center;
             font-family: 'Menlo', serif;
-            border-bottom: 0.5px solid #dadada;
+            border-radius: 100px;
+            border: 2px solid #78D9FD;
+            padding: 20px;
+            width: 50px;
+            height: 30px;
+            margin: 5px 0px 2px 50px;
         }
-        span.time {
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        #counter {
             font-size: 40px;
         }
 
@@ -51,22 +62,37 @@
             transition: opacity 0.2s ease-in-out;
             width: 120px;
         }
+
         .flex:hover {
             opacity: 0.4;
         }
 
-        button {
-            font-size: 15px;
+        .timer-reset {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-counter {
+            font-size: 14px;
+            border-top: 0.55px solid #dadada;
+            margin-top: 2px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 
 <body>
     <div class="timer-header">
-      <h1 class="name">Let's Hydrate</h1>
+        <h1>Drink Water</h1>
     </div>
     <div class="timer-label">
-        <label><span class="time">5</span> ms</label>
+        <label><span id="counter">5</span> ms</label>
     </div>
     <div class="timer-button">
         <div class="flex-container">
@@ -88,7 +114,8 @@
         <button type="submit">Reset</button>
     </div>
     <div class="timer-counter">
-        <label for="counter">Counter: <span class="counter">##</span></label>
+        <label>Count Glass:</label>
+        <label><span id="counter">##</span></label>
     </div>
     <script src="popup.js"></script>
 </body>
