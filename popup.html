@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <title>Drink Water</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        html, body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            margin: 0;
+            min-height: 300px;
+            padding: 0;
+            width: 150px;
+        }
+        h1 {
+            font-family: 'Menlo', monospace;
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0;
+            color: blue;
+        }
+
+        .timer-header {
+            align-items: center;
+            border-bottom: 0.55px solid #dadada;
+        }
+
+        .timer-label {
+            padding: 10px 22px;
+            align-items: center;
+            font-family: 'Menlo', serif;
+            border-bottom: 0.5px solid #dadada;
+        }
+        span.time {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 40px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 22px;
+        }
+
+        .flex {
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+            width: 120px;
+        }
+        .flex:hover {
+            opacity: 0.4;
+        }
+
+        button {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timer-header">
+      <h1 class="name">Let's Hydrate</h1>
+    </div>
+    <div class="timer-label">
+        <label><span class="time">5</span> ms</label>
+    </div>
+    <div class="timer-button">
+        <div class="flex-container">
+            <div class="flex">
+                <button>5</button>
+            </div>
+            <div class="flex">
+                <button>10</button>
+            </div>
+            <div class="flex">
+                <button>15</button>
+            </div>
+            <div class="flex">
+                <button>other</button>
+            </div>
+        </div>
+    </div>
+    <div class="timer-reset">
+        <button type="submit">Reset</button>
+    </div>
+    <div class="timer-counter">
+        <label for="counter">Counter: <span class="counter">##</span></label>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
