@@ -40,14 +40,14 @@
             align-items: center;
             font-family: 'Menlo', serif;
             border-radius: 100px;
-            border: 2px solid #78D9FD;
+            border: 1px solid #78D9FD;
             padding: 20px;
             width: 50px;
             height: 30px;
             margin: 5px 0px 2px 50px;
         }
 
-        #counter {
+        .counter {
             font-size: 40px;
         }
 
@@ -92,7 +92,7 @@
         <h1>Drink Water</h1>
     </div>
     <div class="timer-label">
-        <label><span id="counter">5</span> ms</label>
+        <label><span class="counter" id="timer">5</span> ms</label>
     </div>
     <div class="timer-button">
         <div class="flex-container">
@@ -115,8 +115,9 @@
     </div>
     <div class="timer-counter">
         <label>Count Glass:</label>
-        <label><span id="counter">##</span></label>
+        <label><span class="counter">##</span></label>
     </div>
+    <script src="library/p5.js"></script>
     <script src="popup.js"></script>
 </body>
 

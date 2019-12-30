@@ -1,14 +1,26 @@
-let changeColor = document.getElementById('changeColor');
+var counter = 0;
+var timeleft = 60;
 
-chrome.storage.sync.get('color', function(data) {
-    changeColor.style.backgroundColor = data.color;
-    changeColor.setAttribute('value', data.color);
-});
+function convertSeconds(s) {
+  var min = floor(s / 60);
+  var sec = floor(s % 60);
+  return nf(min, 2) + ":" + nf(sec, 2);
+}
 
-changeColor.onclick = function(element) {
-    let color = element.target.value;
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-        chrome.tabs.executeScript(
-            tabs[0].id, { code: 'document.body.style.backgroundColor = "' + color + '";' });
-    });
-};
+function setup() {
+  noCanvas();
+
+  var timer = select("#timer");
+  timer.html(convertSeconds(timeleft - counter));
+
+  var interval = setInterval(timeIt, 1000);
+
+  function timeIt() {
+    counter++;
+    timer.html(convertSeconds(timeleft - counter));
+    if (counter == timeleft) {
+      clearInterval(interval);
+      //counter = 0;
+    }
+  }
+}

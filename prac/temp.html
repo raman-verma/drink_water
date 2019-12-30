@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Fancy box confirm Dialog -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="p5.js"></script>
+    <script src="sketch.js"></script>
+</head>
+
+<body>
+    <a class="fancybox" href="#">click here</a>
+
+    <div id="confirm"
+        style="background-position: top right; background-repeat: no-repeat; padding-top: 10px; display: none;"></div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".fancybox").on("click", function (e) {
+            e.preventDefault();
+            fancyconfirm("Do you wish to continue?", {
+                /* 
+                    Define your buttons here, can handle multiple buttons 
+                    with custom title and values
+                    */
+                buttons: [{
+                    class: "yes",
+                    type: "button",
+                    title: "Yes",
+                    value: "yes"
+                }, {
+                    class: "no",
+                    type: "button",
+                    title: "No",
+                    value: "no"
+                }, {
+                    class: "maybe",
+                    type: "button",
+                    title: "Maybe?",
+                    value: "maybe"
+                }],
+                modal: true
+            },
+
+                function (resp) {
+                    alert("You clicked " + resp);
+                });
+        });
+    });
+
+    function fancyconfirm(msg, options, callback) {
+        $.fancybox("#confirm", {
+            modal: options.modal,
+            beforeShow: function () {
+                this.content.prepend("<p class=\"title\"></p>");
+                $(".title").html(msg);
+
+                if (options.buttons == null) {
+                    options.buttons = [{
+                        clsName: "yes",
+                        title: "Yes",
+                        value: true
+                    }, {
+                        clsName: "no",
+                        title: "No",
+                        value: false
+                    }];
+                }
+
+                for (i = 0; i < options.buttons.length; i++) {
+                    this.content.append($("<input>", {
+                        type: "button",
+                        class: "confirm " + options.buttons[i].class,
+                        value: options.buttons[i].title
+                    }).data("index", i).css("margin-left", ((i > 0) ? "10px" : "")));
+                }
+                $(this.content).css("text-align", "center");
+            },
+            afterShow: function () {
+                $(".confirm").on("click", function (event) {
+                    ret = options.buttons[$(event.target).data("index")].value;
+                    $.fancybox.close();
+                });
+            },
+            afterClose: function () {
+                this.content.html("");
+                callback.call(this, ret);
+            }
+        });
+    }
+</script>
+
+</html>
