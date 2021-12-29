@@ -1,47 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
-    <title>Drink Water</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Reminder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/popup.css">
+    <script src="js/popup.js"></script>
+
 </head>
 
 <body>
-    <div class="timer-header">
-        <h1>Drink Water</h1>
-    </div>
-    <div class="timer-label">
-        <div class="circle-div">
-            <label><span class="counter" id="timer">00:00</span> ms</label>
-        </div>
-    </div>
-    <div class="timer-button">
-        <div class="flex-container">
-            <div class="flex">
-                <button>5</button>
+    <article class="leaderboard">
+        <header>
+            <svg id="Layer_1" x="0px" y="0px" viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve" class="leaderboard__icon">
+                <path
+                    d="M683.323077 610.461538l-7.876923 1.969231c-29.538462 9.846154-61.046154-3.938462-72.861539-33.476923l-64.984615-173.292308c-51.2-137.846154-206.769231-204.8-342.646154-147.692307C66.953846 311.138462 9.846154 460.8 57.107692 590.769231L118.153846 758.153846c9.846154 29.538462-5.907692 61.046154-33.476923 70.892308l-7.876923 1.969231c-33.476923 11.815385-49.230769 51.2-37.415385 84.676923l7.876923 21.661538c3.938462 9.846154 17.723077 17.723077 29.538462 11.815385l677.415385-250.092308c11.815385-3.938462 17.723077-19.692308 13.784615-31.507692l-7.876923-21.661539c-5.907692-31.507692-43.323077-49.230769-76.8-35.446154z m-165.415385 248.123077l-147.692307 55.138462c-9.846154 3.938462-13.784615 15.753846-7.876923 23.630769 23.630769 39.384615 72.861538 55.138462 116.184615 39.384616 43.323077-15.753846 68.923077-61.046154 63.015385-104.369231-3.938462-9.846154-15.753846-15.753846-23.63077-13.784616z m450.953846-295.384615c33.476923-112.246154 15.753846-232.369231-45.292307-330.830769-61.046154-100.430769-161.476923-169.353846-275.692308-191.015385-9.846154-1.969231-17.723077 3.938462-17.723077 11.815385l-9.846154 55.138461c-1.969231 7.876923 3.938462 13.784615 11.815385 15.753846 88.615385 17.723077 167.384615 72.861538 216.615385 151.63077s61.046154 173.292308 37.415384 261.907692c-1.969231 7.876923 1.969231 15.753846 9.846154 17.723077l53.169231 17.723077c9.846154 0 17.723077-1.969231 19.692307-9.846154zM752.246154 334.769231c-31.507692-51.2-82.707692-84.676923-141.784616-96.492308-7.876923-1.969231-15.753846 3.938462-17.723076 11.815385l-5.907693 57.107692c0 7.876923 3.938462 13.784615 11.815385 15.753846 33.476923 7.876923 63.015385 27.569231 80.738461 57.107692 17.723077 29.538462 23.630769 64.984615 13.784616 96.492308-1.969231 5.907692 1.969231 13.784615 7.876923 15.753846l53.169231 21.661539c7.876923 3.938462 15.753846-1.969231 19.692307-9.846154 17.723077-57.107692 9.846154-118.153846-21.661538-169.353846z" />
+            </svg>
+            <h1 class="alertboard__title">
+                <span class="alertboard__title--top">Alerts</span>
+                <span class="alertboard__title--bottom">Be Reminded</span>
+            </h1>
+        </header>
+
+        <main class="mainboard__alerts" id="alert-list-items">
+            <article id="myalertlist" class="mainboard__alert">
+                <div class="mainboard__counter">
+                    <object data="images/number.svg" type="image/svg+xml"></object>
+                    <span id="alert-counter">0</span>
+                </div>
+                <span id="reminder-name" class="mainboard__name">Water</span>
+                <button id="alarmOff" class="mainboard__btn btn" type="button">
+                    <svg class="svg-icon" viewBox="0 0 1024 1024">
+                        <path
+                            d="M512 85.333333C277.333333 85.333333 85.333333 277.333333 85.333333 512s192 426.666667 426.666667 426.666667 426.666667-192 426.666667-426.666667S746.666667 85.333333 512 85.333333z m213.333333 469.333334H298.666667v-85.333334h426.666666v85.333334z" />
+                    </svg>
+                </button>
+            </article>
+        </main>
+
+        <footer>
+            <!-- TODO: remove row div when buttons are finalize-->
+            <div class="row">
+                <button id="make-alert-form" type="button" class="col-sm-4 btn btn-light" aria-label="Center Align">
+                    Add New Item
+                </button>
+                <button id="get-all-alert" type="button" class="col-sm-4 btn btn-light" aria-label="Center Align">
+                    get all key
+                </button>
+
+                <button id="reload-button" type="button" class="col-sm-4 btn btn-default" aria-label="Center Align">
+                    <img src="images/refresh.png" alt="reload">
+                </button>
             </div>
-            <div class="flex">
-                <button>10</button>
-            </div>
-            <div class="flex">
-                <button>15</button>
-            </div>
-            <div class="flex">
-                <button>other</button>
-            </div>
-        </div>
-    </div>
-    <div class="timer-reset">
-        <button type="submit">Reset</button>
-    </div>
-    <div class="timer-counter">
-        <label>Count Glass:</label>
-        <label><span class="counter">##</span></label>
-    </div>
-    <!-- <script src="js/popup.js"></script> -->
+
+        </footer>
+    </article>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
