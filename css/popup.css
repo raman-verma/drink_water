@@ -103,28 +103,26 @@ body {
 }
 
 .mainboard__name {
-    color: #979cb0;
+    display: block;
+    color: #878faf;
     font-weight: 600;
     font-size: 20px;
-    letter-spacing: 0.64px;
+    letter-spacing: 0.5px;
     margin-left: 12px;
+    white-space: normal;
 }
 
 .mainboard__btn {
     color: #0a0a0a;
-    font-size: 30px;
+    background-image: url(../images/minus-button.png);
+    background-size: contain;
+    height: 32px;
+    width: 32px;
+    overflow: hidden;
 }
 
 .mainboard__btn:hover {
-    color: #d13e2b;
-}
-
-.mainboard__btn .svg-icon {
-    /* width: 1em;
-    height: 1em; */
-    max-width: 80%;
-    vertical-align: middle;
-    fill: currentColor;
+    background-image: url(../images/remove.png);
     overflow: hidden;
 }
 

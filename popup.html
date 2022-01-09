@@ -8,7 +8,6 @@
     <title>Reminder</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/popup.css">
-    <script src="js/popup.js"></script>
 
 </head>
 
@@ -26,25 +25,29 @@
         </header>
 
         <main class="mainboard__alerts" id="alert-list-items">
-            <article id="myalertlist" class="mainboard__alert">
+            <!-- <article id="myalertlist-1" class="mainboard__alert">
+                <div class="mainboard__counter">
+                    <object data="images/number.svg" type="image/svg+xml" alt="number.svg"></object>
+                    <span id="alert-counter">0</span>
+                </div>
+                <span id="reminder-name-1" class="mainboard__name">Water</span>
+                <button class="mainboard__btn btn alarmOff" name="alarmOff" type="button"></button>
+            </article>
+
+            <article id="myalertlist-2" class="mainboard__alert">
                 <div class="mainboard__counter">
                     <object data="images/number.svg" type="image/svg+xml"></object>
                     <span id="alert-counter">0</span>
                 </div>
-                <span id="reminder-name" class="mainboard__name">Water</span>
-                <button id="alarmOff" class="mainboard__btn btn" type="button">
-                    <svg class="svg-icon" viewBox="0 0 1024 1024">
-                        <path
-                            d="M512 85.333333C277.333333 85.333333 85.333333 277.333333 85.333333 512s192 426.666667 426.666667 426.666667 426.666667-192 426.666667-426.666667S746.666667 85.333333 512 85.333333z m213.333333 469.333334H298.666667v-85.333334h426.666666v85.333334z" />
-                    </svg>
-                </button>
-            </article>
+                <span id="reminder-name-2" class="mainboard__name">open website</span>
+                <button class="mainboard__btn btn alarmOff" name="alarmOff" type="button"></button>
+            </article> -->
         </main>
 
         <footer>
             <!-- TODO: remove row div when buttons are finalize-->
             <div class="row">
-                <button id="make-alert-form" type="button" class="col-sm-4 btn btn-light" aria-label="Center Align">
+                <button id="pop-add-alert-btn" type="button" class="col-sm-4 btn btn-light" aria-label="Center Align">
                     Add New Item
                 </button>
                 <button id="get-all-alert" type="button" class="col-sm-4 btn btn-light" aria-label="Center Align">
@@ -52,14 +55,15 @@
                 </button>
 
                 <button id="reload-button" type="button" class="col-sm-4 btn btn-default" aria-label="Center Align">
-                    <img src="images/refresh.png" alt="reload">
+                    <img src="images/refresh.png" alt="reload" width="16px" height="16px">
                 </button>
             </div>
 
         </footer>
     </article>
+    <script src="js/popup.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
